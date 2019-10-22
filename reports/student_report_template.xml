@@ -1,0 +1,40 @@
+<odoo>
+    <template id="student_report_template">
+        <t t-call="report.html_container">
+            <t t-call="report.external_layout">
+                <div class="page">
+                    <div class="row bg-primary">
+                        <div class="col-xs-2">Name</div>
+                        <div class="col-xs-2">Age</div>
+                        <div class="col-xs-2">Track</div>
+                        <div class="col-xs-2">Salary</div>
+                        <div class="col-xs-4">Skills</div>
+                    </div>
+                    <t t-foreach="docs" t-as="o">
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <h4><span t-field="o.name"/></h4>
+                            </div>
+                            <div class="col-xs-2">
+                                <h4><span t-field="o.age"/></h4>
+                            </div>
+                            <div class="col-xs-2">
+                                <h4><span t-field="o.track_id"/></h4>
+                            </div>
+                            <div class="col-xs-2">
+                                <h4><span t-field="o.salary"/></h4>
+                            </div>
+                            <div class="col-xs-4">
+                                <h4>
+                                    <tr t-foreach="o.skill_ids" t-as="skill">
+                                        <span t-field="skill.name"/>
+                                    </tr>
+                                </h4>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

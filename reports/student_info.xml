@@ -1,0 +1,18 @@
+<odoo>
+    <template id="report_student">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <!--<t t-call="report_student">
+                    <div class="page">
+                        <h2>Report title</h2>
+                    </div>
+                </t>-->
+                <t t-call="report.external_layout">
+            <div class="page">
+                <h2>My first report</h2>
+            </div>
+        </t>
+            </t>
+        </t>
+    </template>
+</odoo>
