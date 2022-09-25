@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Inherit Invoice Form View to Modify it -->
+    <record id="inherit_crm_lead_form_view" model="ir.ui.view">
+        <field name="name">Inherit CRM Lead Form View</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='stage_id']" position="attributes">
+                <attribute name="clickable">0</attribute>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <field name="hide_proceed" invisible="1"/>
+                <button type="object" name="change_stage" class="btn btn-primary"
+                        attrs="{'invisible': [('hide_proceed','=',True)]}"
+                        string="Proceed" context="{'stage': 'iq'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Inherit Kanban View -->
+    <record id="inherit_crm_lead_kanban_view" model="ir.ui.view">
+        <field name="name">Inherit CRM Lead Kanban View</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='stage_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
