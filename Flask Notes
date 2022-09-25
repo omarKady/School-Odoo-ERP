@@ -1,0 +1,12 @@
+It is based on WSGI toolkit and jinja2 template engine. Flask is considered as a micro framework.
+
+WSGI ?
+WSGI is the Web Server Gateway Interface. It is a specification that describes how a web server communicates with web applications, and how web applications can be chained together to process one request.
+
+
+What is Jinja2?
+Jinja2 is a web template engine which combines a template with a certain data source to render the dynamic web pages.
+
+virtualenv venv
+Activate virtualenv: source venv/bin/activate
+pip install flask
